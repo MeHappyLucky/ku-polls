@@ -25,4 +25,4 @@ All project documents are in the [Project Wiki](https://github.com/MeHappyLucky/
 [Iteration 1](https://github.com/MeHappyLucky/ku-polls/wiki/Iteration-1) |
 [Iteration . . . (to be added)]() 
 
-[django-tutorial]: TODO-write-the-django-tutorial-URL-here
+[django-tutorial]: https://docs.djangoproject.com/en/3.1/intro/tutorial01/
