@@ -9,6 +9,8 @@ https://cpske.github.io/ISP) course at Kasetsart University.
 
 ## Install and Run
 
+see [requirements.txt](requirements.txt) for the requirements.
+
 to be added.
 
 ## Project Documents
