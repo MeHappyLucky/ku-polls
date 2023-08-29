@@ -15,11 +15,11 @@ to be added.
 
 All project documents are in the [Project Wiki](https://github.com/MeHappyLucky/ku-polls/wiki/Home).
 
-- [Vision Statement](https://github.com/MeHappyLucky/ku-polls/wiki/Vision-Statement)
-- [Requirements](https://github.com/MeHappyLucky/ku-polls/wiki/Requirements)
-- [Development Plan](https://github.com/MeHappyLucky/ku-polls/wiki/Development-Plan)
-- [Project Board](https://github.com/users/MeHappyLucky/projects/1)
-- [Iteration 1](https://github.com/MeHappyLucky/ku-polls/wiki/Iteration-1)
-- [Iteration 2]()
+> [Vision Statement](https://github.com/MeHappyLucky/ku-polls/wiki/Vision-Statement) |
+[Requirements](https://github.com/MeHappyLucky/ku-polls/wiki/Requirements) |
+[Development Plan](https://github.com/MeHappyLucky/ku-polls/wiki/Development-Plan) |
+[Project Board](https://github.com/users/MeHappyLucky/projects/1) |
+[Iteration 1](https://github.com/MeHappyLucky/ku-polls/wiki/Iteration-1) |
+[Iteration 2]() 
 
 [django-tutorial]: TODO-write-the-django-tutorial-URL-here
