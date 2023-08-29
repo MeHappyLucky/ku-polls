@@ -13,9 +13,13 @@ to be added.
 
 ## Project Documents
 
-All project documents are in the [Project Wiki](../../wiki/Home).
+All project documents are in the [Project Wiki](https://github.com/MeHappyLucky/ku-polls/wiki/Home).
 
-- [Vision Statement](../../wiki/Vision%20Statement)
-- [Requirements](../../wiki/Requirements)
+- [Vision Statement](https://github.com/MeHappyLucky/ku-polls/wiki/Vision-Statement)
+- [Requirements](https://github.com/MeHappyLucky/ku-polls/wiki/Requirements)
+- [Development Plan](https://github.com/MeHappyLucky/ku-polls/wiki/Development-Plan)
+- [Project Board]()
+- [Iteration 1](https://github.com/MeHappyLucky/ku-polls/wiki/Iteration-1)
+- [Iteration 2]()
 
 [django-tutorial]: TODO-write-the-django-tutorial-URL-here
