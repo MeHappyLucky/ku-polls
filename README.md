@@ -21,6 +21,6 @@ All project documents are in the [Project Wiki](https://github.com/MeHappyLucky/
 > 
 > [Project Board](https://github.com/users/MeHappyLucky/projects/1) |
 [Iteration 1](https://github.com/MeHappyLucky/ku-polls/wiki/Iteration-1) |
-[Iteration ...(to be added)]() 
+[Iteration . . . (to be added)]() 
 
 [django-tutorial]: TODO-write-the-django-tutorial-URL-here
