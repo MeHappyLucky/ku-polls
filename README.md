@@ -18,6 +18,7 @@ All project documents are in the [Project Wiki](https://github.com/MeHappyLucky/
 > [Vision Statement](https://github.com/MeHappyLucky/ku-polls/wiki/Vision-Statement) |
 [Requirements](https://github.com/MeHappyLucky/ku-polls/wiki/Requirements) |
 [Development Plan](https://github.com/MeHappyLucky/ku-polls/wiki/Development-Plan)
+> 
 > [Project Board](https://github.com/users/MeHappyLucky/projects/1) |
 [Iteration 1](https://github.com/MeHappyLucky/ku-polls/wiki/Iteration-1) |
 [Iteration 2]() 
