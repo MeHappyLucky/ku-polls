@@ -22,6 +22,7 @@ All project documents are in the [Project Wiki](https://github.com/MeHappyLucky/
 * [Development Plan](https://github.com/MeHappyLucky/ku-polls/wiki/Development-Plan)
 * [Project Board](https://github.com/users/MeHappyLucky/projects/1)
 * [Iteration 1 Plan](https://github.com/MeHappyLucky/ku-polls/wiki/Iteration-1-Plan)
+* [Iteration 2 Plan](https://github.com/MeHappyLucky/ku-polls/wiki/Iteration-2-Plan)
 * [Iteration . . . (to be added)]() 
 
 [django-tutorial]: https://docs.djangoproject.com/en/3.1/intro/tutorial01/
