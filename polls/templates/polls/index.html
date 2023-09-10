@@ -6,6 +6,8 @@
     <ul>
     {% for question in latest_question_list %}
         <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+        <li><a href="{% url 'polls:vote' question.id %}"> vote </a></li>
+        <li><a href="{% url 'polls:results' question.id %}"> result </a></li>
     {% endfor %}
     </ul>
 {% else %}
