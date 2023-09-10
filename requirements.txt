@@ -1,2 +1,3 @@
 # list of Python packages this project requires (only)
 Django
+python-decouple
