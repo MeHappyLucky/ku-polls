@@ -1,0 +1,8 @@
+li a {
+    color: purple;
+}
+
+body {
+    background: white url("images/background1.png") no-repeat;
+    background-size: cover;
+}
