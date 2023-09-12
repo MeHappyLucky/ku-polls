@@ -5,7 +5,7 @@ from django.views import generic
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 
-from .models import Choice, Question
+from .models import Choice, Question, Vote
 
 
 class IndexView(generic.ListView):
@@ -54,10 +54,24 @@ def vote(request, question_id):
             'question': question,
             'error_message': "You didn't select a choice.",
         })
-    else:
-        selected_choice.votes += 1
-        selected_choice.save()
-        # Always return an HttpResponseRedirect after successfully dealing
-        # with POST data. This prevents data from being posted twice if a
-        # user hits the Back button.
-        return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
+    # selected_choice.votes += 1
+    # selected_choice.save()
+    this_user = request.user
+    # TODO: confirm the logic of this try and except
+    #  : this was put to made sure that one user have one vote
+    try:
+        # if exists, the user already cast their vote
+        # find a vote for this user and this question
+        this_vote = Vote.objects.get(user=this_user, choice__question=question)
+        # update their vote
+        this_vote.choice = selected_choice
+    except Vote.DoesNotExist:
+        # if DoesNotExist, add it.
+        # No matching vote: the user have yet to vote
+        # add a new vote
+        this_vote = Vote(user=this_user, choice=selected_choice)
+
+    this_vote.save()
+    # TODO: Use messages to display a confirmation on the results page.
+
+    return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
