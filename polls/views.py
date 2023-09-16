@@ -1,4 +1,4 @@
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse
 from django.views import generic
@@ -6,7 +6,7 @@ from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
-
+from django.contrib import messages
 from .models import Choice, Question, Vote
 
 
@@ -35,6 +35,27 @@ class DetailView(generic.DetailView):
         Excludes any questions that aren't published yet.
         """
         return Question.objects.filter(pub_date__lte=timezone.now())
+
+    def get(self, request, *args, **kwargs):
+
+        try:
+            self.object = self.get_object()
+        except Http404:
+            messages.error(request, "Question does not exist")
+            return redirect("polls:index")
+
+        try:
+            vote = Vote.objects.get(user=request.user, choice__in=self.object.choice_set.all())
+            selected_choice = vote.choice
+        except (Vote.DoesNotExist, TypeError):
+            selected_choice = ""
+
+        if not self.object.can_vote():
+            return render(request, 'polls/results.html',
+                          {'question': self.object, 'message': "Vote closed."})
+
+        return render(request, self.template_name,
+                      {"question": self.object, "selected_choice": selected_choice})
 
 
 class ResultsView(generic.DetailView):
@@ -71,6 +92,7 @@ def vote(request, question_id):
         # add a new vote
         this_vote = Vote(user=this_user, choice=selected_choice)
     this_vote.save()
+    messages.success(request, f'Your vote for "{question.question_text}" has been saved')
     return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
 
 
@@ -84,7 +106,7 @@ def signup(request):
             username = form.cleaned_data.get('username')
             # password input field is named 'password1'
             raw_passwd = form.cleaned_data.get('password1')
-            user = authenticate(username=username,password=raw_passwd)
+            user = authenticate(username=username, password=raw_passwd)
             login(request, user)
         return redirect('polls:index')
         # what if form is not valid?
