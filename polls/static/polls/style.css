@@ -6,3 +6,7 @@ body {
     background: white url("images/background2.png") no-repeat;
     background-size: cover;
 }
+
+.message {
+    color: red;
+}
