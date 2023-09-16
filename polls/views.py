@@ -1,9 +1,11 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import UserCreationForm
 
 from .models import Choice, Question, Vote
 
@@ -57,8 +59,6 @@ def vote(request, question_id):
     # selected_choice.votes += 1
     # selected_choice.save()
     this_user = request.user
-    # TODO: confirm the logic of this try and except
-    #  : this was put to made sure that one user have one vote
     try:
         # if exists, the user already cast their vote
         # find a vote for this user and this question
@@ -70,8 +70,26 @@ def vote(request, question_id):
         # No matching vote: the user have yet to vote
         # add a new vote
         this_vote = Vote(user=this_user, choice=selected_choice)
-
     this_vote.save()
-    # TODO: Use messages to display a confirmation on the results page.
-
     return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
+
+
+def signup(request):
+    """Register a new user."""
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # get named fields from the form data
+            username = form.cleaned_data.get('username')
+            # password input field is named 'password1'
+            raw_passwd = form.cleaned_data.get('password1')
+            user = authenticate(username=username,password=raw_passwd)
+            login(request, user)
+        return redirect('polls:index')
+        # what if form is not valid?
+        # we should display a message in signup.html
+    else:
+        # create a user form and display it the signup page
+        form = UserCreationForm()
+    return render(request, 'registration/signup.html', {'form': form})

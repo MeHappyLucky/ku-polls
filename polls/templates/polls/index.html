@@ -6,7 +6,7 @@
    Welcome back, {{ user.username.title }}!
      <a href="{% url 'logout' %}?next={{request.path}}">Logout</a>
 {% else %}
-   Please <a href="{% url 'login' %}?next={{request.path}}">Login</a> to Vote!
+   Please <a href="{% url 'login' %}?next={{request.path}}">Login</a> or <a href="{% url 'signup' %}?next={{request.path}}">Signup</a> to Vote!
 {% endif %}
 
 {% if latest_question_list %}
