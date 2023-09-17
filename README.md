@@ -15,6 +15,12 @@ https://cpske.github.io/ISP) course at Kasetsart University.
 
 to be added.
 
+## User Demo
+| Username  | Password        |
+|-----------|-----------------|
+|   demo1   | stupidpassword1 |
+|   demo2   | stupidpassword2 |
+
 ## Project Documents
 
 All project documents are in the [Project Wiki](https://github.com/MeHappyLucky/ku-polls/wiki/Home).
@@ -25,6 +31,7 @@ All project documents are in the [Project Wiki](https://github.com/MeHappyLucky/
 * [Project Board](https://github.com/users/MeHappyLucky/projects/1)
 * [Iteration 1 Plan](https://github.com/MeHappyLucky/ku-polls/wiki/Iteration-1-Plan)
 * [Iteration 2 Plan](https://github.com/MeHappyLucky/ku-polls/wiki/Iteration-2-Plan)
+* [Iteration 3 Plan](https://github.com/MeHappyLucky/ku-polls/wiki/Iteration-3-Plan)
 * [Iteration . . . (to be added)]() 
 
 [django-tutorial]: https://docs.djangoproject.com/en/3.1/intro/tutorial01/
