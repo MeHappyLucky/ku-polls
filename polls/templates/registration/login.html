@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'polls/login.css' %}">
+<head>
+    <meta charset="UTF-8">
+    <title>Please Login</title>
+</head>
+<body>
+<h2>Login</h2>
+<form method="POST">
+    {% csrf_token %}
+  <table>
+  {{ form.as_table }}
+  </table>
+  <p>
+  <button type="submit">Login</button>
+  </p>
+  <input type="hidden" name="next" value="{{next}}"/>
+</form>
+</body>
+</html>

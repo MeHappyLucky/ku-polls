@@ -2,11 +2,23 @@
 
 <link rel="stylesheet" href="{% static 'polls/style.css' %}">
 
+{% if user.is_authenticated %}
+   Welcome back, {{ user.username.title }}!
+     <a href="{% url 'logout' %}?next={{request.path}}">Logout</a>
+{% else %}
+   Please <a href="{% url 'login' %}?next={{request.path}}">Login</a> or <a href="{% url 'signup' %}?next={{request.path}}">Signup</a> to Vote!
+{% endif %}
+
+{% if messages %}
+    {% for message in messages %}
+        <p class="message"> {{ message }} </p>
+    {% endfor %}
+{% endif %}
+
 {% if latest_question_list %}
     <ul>
     {% for question in latest_question_list %}
         <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
-        <li><a href="{% url 'polls:vote' question.id %}"> vote </a></li>
         <li><a href="{% url 'polls:results' question.id %}"> result </a></li>
     {% endfor %}
     </ul>
