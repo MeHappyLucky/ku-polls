@@ -16,12 +16,33 @@
 {% endif %}
 
 {% if latest_question_list %}
+    <div class="polls">
     <ul>
-    {% for question in latest_question_list %}
-        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
-        <li><a href="{% url 'polls:results' question.id %}"> result </a></li>
-    {% endfor %}
+    <table>
+    <thead>
+        <tr>
+            <th>Questions</th>
+            <th>Vote</th>
+            <th>Results</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for question in latest_question_list %}
+        <tr>
+            <td class="question">{{ question.question_text }}</td>
+            <td class="vote">
+                <button class="btn" onclick="window.location.href='{% url 'polls:detail' question.id %}'">Vote</button>
+            </td>
+            <td class="results">
+                <button class="btn" onclick="window.location.href='{% url 'polls:results' question.id %}'">Results</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
     </ul>
+    </div>
 {% else %}
     <p>No polls are available.</p>
 {% endif %}

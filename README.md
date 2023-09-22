@@ -9,17 +9,28 @@ additional features.
 This app was created by Sukprachoke Leelapisuth as part of the [Individual Software Process](
 https://cpske.github.io/ISP) course at Kasetsart University.
 
-## Install and Run
+## Installation
 
-> see [requirements.txt](requirements.txt) for the requirements.
+* See [Installation](Installation.md) for Instructions.
 
-to be added.
+## How to Run 
+
+* After following [Installation](Installation.md), Run this command to run the app.
+
+```
+python manage.py runserver
+```
+
+* If you wish to exit, run this in terminal and close your program.
+```
+deactivate
+```
 
 ## User Demo
 | Username  | Password        |
 |-----------|-----------------|
-|   demo1   | stupidpassword1 |
-|   demo2   | stupidpassword2 |
+|   demo1   | password1 |
+|   demo2   | password2 |
 
 ## Project Documents
 

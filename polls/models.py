@@ -24,7 +24,7 @@ class Question(models.Model):
         """ Checks if the question was published recently. """
         now = timezone.now()
         return now - datetime.timedelta(days=1) <= self.pub_date <= now
-    
+
     def is_published(self) -> bool:
         """ Checking if the question is published.
         returns True if the current date is on or after the 'date published'
@@ -55,6 +55,7 @@ class Choice(models.Model):
     """
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     choice_text = models.CharField(max_length=200)
+
     # votes = models.IntegerField(default=0)
 
     @property

@@ -1,3 +1,8 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'polls/style.css' %}">
+
+
 <h1>{{ question.question_text }}</h1>
 
 <table>
@@ -10,11 +15,11 @@
   <tbody>
     {% for choice in question.choice_set.all %}
       <tr>
-        <td>{{ choice.choice_text }}</td>
+        <td class="question">{{ choice.choice_text }}</td>
         <td>{{ choice.votes }}</td>
       </tr>
     {% endfor %}
   </tbody>
 </table>
 
-<a href="{% url 'polls:index' %}">Home</a>
+<button class="btn" onclick="window.location.href='{% url 'polls:index' %}'">Home</button>
