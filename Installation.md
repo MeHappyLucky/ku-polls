@@ -44,6 +44,6 @@ python manage.py test
 6. Install data from the data fixtures
 
 ```
-python manage.py loaddata data/polls-v2.json
 python manage.py loaddata data/users.json
+python manage.py loaddata data/polls-v2.json
 ```

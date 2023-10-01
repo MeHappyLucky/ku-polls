@@ -27,10 +27,12 @@ deactivate
 ```
 
 ## User Demo
-| Username  | Password        |
-|-----------|-----------------|
-|   demo1   | password1 |
-|   demo2   | password2 |
+| Username | Password   |
+|----------|------------|
+| admin    | admin1234  |
+| Meng     | hackmeng42 |
+| Meng2    | hackmeng42  |
+| Meng3    | hackmeng42  |
 
 ## Project Documents
 

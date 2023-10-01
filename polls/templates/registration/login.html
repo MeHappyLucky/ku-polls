@@ -15,7 +15,7 @@
   {{ form.as_table }}
   </table>
   <p>
-  <button type="submit">Login</button>
+  <button type="submit">Login</button> <button class="btn" onclick="window.location.href='{% url 'signup' %}'">Sign Up</button>
   </p>
   <input type="hidden" name="next" value="{{next}}"/>
 </form>
